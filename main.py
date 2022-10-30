@@ -1,16 +1,13 @@
-# This is a sample Python script.
+import requests as requests
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# First level: Напишите программу, которая выполняет GET-запрос к API с помощью библиотеки requests
+# и выведит с помощью f-строк информацию о пользователе (ИМЯ, ФАМИЛИЯ, EMAIL).
+result = requests.get('https://reqres.in/api/users/2')
+
+firstName = result.json()['data']['first_name']
+lastName = result.json()['data']['last_name']
+email = result.json()['data']['email']
+print(f'First name : {firstName}, \nLast name: {lastName},\nEmail; {email}')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
